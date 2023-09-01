@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management App</title>
+    <link rel="stylesheet" href="/styles/styles.css"> <!-- Add your styles here -->
+</head>
+<body>
+    <div class="main">
+        <h1>Task Management App</h1>
+        
+        <!-- Add Task Section -->
+        <div class="section">
+        <form id="add-task">
+            <h2>Add Task</h2>
+            <label for="id">ID:</label>
+            <input type="number" id="id" placeholder="Task ID" required>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Task Name" required>
+
+            <label for="start-date">Start Date:</label>
+            <input type="date" id="start-date" required>
+
+            <label for="end-date">End Date:</label>
+            <input type="date" id="end-date" required>
+
+            <label for="status">Status:</label>
+            <select id="status" required>
+                <option value="In Progress" selected>In Progress</option>
+                <option value="Completed">Completed</option>
+                <option value="Canceled">Canceled</option>
+                <option value="Due Pass">Due Pass</option>
+            </select>
+            <button onclick="addTask();">Add Task</button>
+            <div class="message"></div>
+        </form>
+        </div>
+
+        <!-- add sub task section -->
+        <div id="add-sub-task" class="add-sub-task-class">
+            <h2>Add Sub-Task</h2>
+            <form>
+              <label for="task-name">Task Name:</label>
+              <input type="text" id="sub-task-name" name="sub-task-name" placeholder="sub-Task Name" required><br><br>
+              
+              <label for="start-date">Start Date:</label>
+              <input type="date" id="sub-start-date" name="sub-start-date" required><br><br>
+              
+              <label for="end-date">End Date:</label>
+              <input type="date" id="sub-end-date" name="sub-end-date" required><br><br>
+              
+              <label for="task-status">Status:</label>
+              <select id="sub-task-status" name="task-status" required>
+                <option value="in-progress">In Progress</option>
+                <option value="not-started">Cancelled</option>
+                <option value="completed">Completed</option>
+                <option value="completed">Due Pass</option>
+              </select><br><br>
+              
+              <button type="submit" value="Add Sub-Task" onclick="addTask">Add Sub-Task</button>
+            </form>
+          </div>
+          
+        
+        
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="taskListBody">
+                    <!-- Task rows will be added dynamically here -->
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+    
+    <script src="/scripts/main.js"></script> <!-- Include your JavaScript file here -->
+</body>
+</html>
